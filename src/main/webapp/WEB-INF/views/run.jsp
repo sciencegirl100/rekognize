@@ -5,7 +5,7 @@
 <html ng-app="rekognize">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Rekognize - Home</title>
+        <title>Rekognize - Run</title>
         <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/resources/css/style.css" rel="stylesheet"/>
         <script src="https://kit.fontawesome.com/d451b60ca2.js" crossorigin="anonymous"></script>
@@ -18,8 +18,31 @@
         <script src="https://cdn.jsdelivr.net/npm/live@0.1.25-beta.0/lib/index.min.js"></script>
     </head>
     <!-- This is the landing page with details about the application as well as access credentials -->
-    <body ng-controller="HomePageController">
+    <body ng-controller="RunPageController">
 	   	<menubar></menubar>
-	   	<about></about>
+	   	<!-- TODO: add async call to JSP REST API -->
+        <div class="container-fluid contentOffset">
+            <div class="row content">
+                <div class="col-4">
+                    <div class="row overflow-auto test">
+                        <!-- Past Analysis  -->
+                        <savedanalysis></savedanalysis>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        ${status}
+                    </div>
+                    <form novalidate class="configure-form" action="/configure">
+                        <div class="row">
+                            <!-- Image upload and view -->
+                        </div>
+                        <div class="row">
+                            <button type="submit" class="themed-button">Analyze Image</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
