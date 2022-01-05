@@ -19,7 +19,8 @@ public class Rekognition {
 	
 	public static FaceDetails face(String s3Key, String region) throws Exception {
 		String AWSRekognitionJSONResult = "";
-		FaceDetails result = new ObjectMapper().readValue(AWSRekognitionJSONResult, FaceDetails.class);
+//		FaceDetails result = new ObjectMapper().readValue(AWSRekognitionJSONResult, FaceDetails.class);
+		FaceDetails result = new FaceDetails();
 		return result;
 	}
 	
