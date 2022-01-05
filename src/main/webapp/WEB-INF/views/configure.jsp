@@ -33,14 +33,14 @@
                                 AWS Access Key ID <hh class="req-mark">*</hh>
                             </label>
                             <br>
-                            <input type="text" name="awsId" value="${awsId}" class="themed-input" required>
+                            <input type="text" id="awsId" value="${awsId}" class="themed-input" required>
                             <br>
                             <br>
                             <label>
                                 AWS Access Key Secret <hh class="req-mark">*</hh> 
                             </label>
                             <br>
-                            <input type="password" name="awsSecret" placeholder="${awsKeyMask}" class="themed-input" required>
+                            <input type="password" id="awsSecret" placeholder="${awsKeyMask}" class="themed-input" required>
                             <br>
                             <br>
                         </div>
@@ -70,12 +70,12 @@
                                 S3 Bucket Behavior
                             </label>
                             <br>
-                            <input type="checkbox" name="awsKeep" ${awsKeep}>
+                            <input type="checkbox" id="awsKeep" ${awsKeep}>
                             Keep images in S3
                         </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="themed-button">Save</button>
+                        <button type="button" class="themed-button">Save</button>
                     </div>
                 </form>
             </div>
@@ -96,6 +96,10 @@
         default:
             console.log("Unknown pushState: ${pushState}");
             break;
+    }
+
+    function submit() {
+        
     }
 </Script>
 </html>
