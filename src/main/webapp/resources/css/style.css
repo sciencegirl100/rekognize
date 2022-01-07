@@ -122,8 +122,14 @@ body {
 
 /* Run */
 
-.saved-item {
-
+.json-display {
+	background-color: #2E3440;
+	margin: 8px;
+	border: none;
+	border-radius: 8px;
+	width: 99%;
+	height: 76vh;
+	overflow: auto;
 }
 
 .test {

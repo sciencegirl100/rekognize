@@ -24,7 +24,7 @@
         <div class="container-fluid contentOffset">
             <div class="row content">
                 <div class="col-4">
-                    <div class="row overflow-auto test">
+                    <div class="row overflow-auto">
                         <!-- Past Analysis  -->
                         <!-- <savedanalysis></savedanalysis> -->
                     </div>
@@ -36,20 +36,16 @@
                     <form novalidate class="configure-form">
                         <div class="row">
                             <!-- Image upload and view -->
-                            <input type="file" id="file" name="file" accept="image/*" Required/>
-                        </div>
-                        <div class="row">
-                            <button type="submit" class="themed-button" onclick="submitFile">Analyze Image</button>
+                            <input type="file" id="file" accept="image/*" onchange="angular.element(this).scope().SubmitImage(this.files)"/>
                         </div>
                     </form>
+                    <div class="row">
+                        <p class="json-display">
+                            {{APIResponse}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
-    <Script>
-        function submitFile(){
-            console.log("submitFile");
-            var file = document.getElementById("file").files[0];
-        }
-    </Script>
 </html>

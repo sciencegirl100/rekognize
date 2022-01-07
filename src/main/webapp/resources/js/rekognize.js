@@ -26,8 +26,30 @@ rekognize.controller('HomePageController', function HomePageController($scope) {
 	console.log("Home Page");
 });
 
-rekognize.controller('RunPageController', function RunPageController($scope) {
+rekognize.controller('RunPageController', function RunPageController($scope, $http) {
 	console.log("Run Page");
+	
+	$scope.SubmitImage = function(files){
+		console.log("Submit Image"); // 👍 That works
+		console.dir(files);
+		if(files.length >= 1){
+			var image = files[0];
+			var fd = new FormData();
+			fd.append("image", image);
+			$http({
+				method: 'POST',
+				url: '/api/face',
+				data: fd,
+				headers: {'Content-Type': undefined},
+				transformRequest: angular.identity
+			}).then(function(result) {
+				console.dir(result.data);
+				console.log(typeof result.data);
+				$scope.APIResponse = JSON.stringify(result.data, null, "\t");
+			});
+
+		}
+	}
 });
 
 rekognize.controller('ConfigurePageController', function ConfigurePageController($scope) {
