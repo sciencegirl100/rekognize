@@ -32,7 +32,6 @@ public class Rekognition {
 	// TODO: Add AWS Region Selection
 	
 	public static List<FaceDetail> face(File file, String region) throws Exception {
-		String AWSRekognitionJSONResult = "{}";
 		List<FaceDetail> result = null;
 		try {
 			System.out.println("Image: " + file.getAbsolutePath());
@@ -55,14 +54,11 @@ public class Rekognition {
 			 DetectFacesResponse facesResp = rekClient.detectFaces(faceReq);
 			result = facesResp.faceDetails();
 			deleteFromS3(region, S3Key);
-//			tempImageFile.delete();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			result = null;
 			e.printStackTrace();
 		}
-//		FaceDetails result = new ObjectMapper().readValue(AWSRekognitionJSONResult, FaceDetails.class);
-		
 		return result;
 	}
 	

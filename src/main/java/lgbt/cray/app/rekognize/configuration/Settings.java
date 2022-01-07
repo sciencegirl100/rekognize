@@ -12,6 +12,8 @@ public class Settings {
 	 * TODO: more data validation before getting/setting
 	 **/
 	
+	// This will get replaced with a database in the future
+	
 	private static Map<String, String> settings = new HashMap<String, String>();
 	
 	public static void setSetting(String key, String payload) {

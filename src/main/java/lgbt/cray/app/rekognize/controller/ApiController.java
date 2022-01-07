@@ -38,7 +38,6 @@ public class ApiController {
 		try {
 			faceResponse = Rekognition.face(Rekognition.mpfToF(file), Settings.getSetting("awsRegion"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			errors += e.toString() + "\n";
 		}
@@ -89,7 +88,6 @@ public class ApiController {
 		try {
 			// faceResponse = Rekognition.face(file.getBytes(), file.getOriginalFilename(), Settings.getSetting("awsRegion"));
 			upl = Rekognition.mpfToF(file);
-//			File tempImageFile = File.createTempFile("rekognize-", "", null);
 			Rekognition.uploadToS3("", upl.getAbsolutePath(), "test.jpg");
 		} catch (Exception e) {
 			e.printStackTrace();
