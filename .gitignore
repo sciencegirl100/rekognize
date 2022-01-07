@@ -1,0 +1,9 @@
+# Eclipse
+.settings/
+*.tmp
+*.bak
+*.swp
+*~.nit
+
+# Java
+.class
