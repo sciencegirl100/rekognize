@@ -25,7 +25,16 @@ public class ConfigureController {
 					String value = query.replaceAll(".*"+k+"=(.{0,}?)&.*", "$1");
 					if (value != null && value.length() > 0) {
 						if(k == "awsKeep") {
-							Settings.setSetting(k, "checked");
+							switch(value) {
+								case "true":
+									Settings.setSetting(k, "checked");
+									break;
+								case "false":
+									Settings.setSetting(k, "");
+									break;
+								default:
+									break;
+							}
 						}else {
 							Settings.setSetting(k, value);
 						}

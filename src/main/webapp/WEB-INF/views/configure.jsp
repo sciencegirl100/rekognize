@@ -19,6 +19,42 @@
 </head>
 <!-- This is the landing page with details about the application as well as access credentials -->
 
+<Script>
+    switch("${pushState}"){
+        case "configure":
+            history.pushState({}, "Rekognize - Configure", "/configure");
+            break;
+        default:
+            console.log("Unknown pushState: ${pushState}");
+            break;
+    }
+
+    function setMsg(msg){
+        document.getElementById("tooltip").innerHTML = msg;
+    }
+
+    function submitConfig() {
+        // Submit Form
+        var key = document.getElementById("awsId").value;
+        var secret = document.getElementById("awsSecret").value;
+        var region = document.getElementById("awsRegion").value;
+        var keep = document.getElementById("awsKeep").checked;
+
+        if(!/[a-zA-Z0-9]{16,128}/.test(key)) {
+            setMsg("😕 AWS Access Key ID must be between 16 and 128 characters long.");
+            return;
+        }
+        if(secret.length == 0) {
+            setMsg("🤔 AWS Access Key Secret must be provided.");
+            return;
+        }
+        setMsg("Submitting...");
+        var builtLink = "/configure?awsId=" + encodeURIComponent(key) + "&awsSecret=" + encodeURIComponent(secret) + "&awsRegion=" + encodeURIComponent(region) + "&awsKeep=" + encodeURIComponent(keep)
+        console.log(builtLink);
+        window.location.href = builtLink; 
+    }
+</Script>
+
 <body ng-controller="ConfigurePageController">
     <menubar></menubar>
     <div class="container-fluid contentOffset">
@@ -49,7 +85,7 @@
                                 AWS Region
                             </label>
                             <br>
-                            <select class="themed-select" name="awsRegion" title="Rekognition AWS Regions">
+                            <select class="themed-select" id="awsRegion" title="Rekognition AWS Regions">
                                 ${awsRegion}
                                 <option value="us-east-1">US East (N. Virginia)</option>
                                 <option value="us-east-2">US East (Ohio)</option>
@@ -75,7 +111,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button type="button" class="themed-button">Save</button>
+                        <button type="button" class="themed-button" onclick="submitConfig()">Save</button>
                     </div>
                 </form>
             </div>
@@ -87,19 +123,4 @@
         </div>
     </div>
 </body>
-
-<Script>
-    switch("${pushState}"){
-        case "configure":
-            history.pushState({}, "Rekognize - Configure", "/configure");
-            break;
-        default:
-            console.log("Unknown pushState: ${pushState}");
-            break;
-    }
-
-    function submit() {
-        
-    }
-</Script>
 </html>
