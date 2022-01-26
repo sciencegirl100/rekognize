@@ -65,6 +65,7 @@ public class Rekognition {
 	public static void deleteFromS3(String region, String key) {
 		
 	}
+	
 	/**
 	 * Uploads file to S3 and returns a string of the object ID in S3 of the given file
 	 * @param bucket       name of the S3 bucket
