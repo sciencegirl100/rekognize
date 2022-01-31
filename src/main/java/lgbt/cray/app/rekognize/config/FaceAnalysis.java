@@ -26,13 +26,19 @@ public class FaceAnalysis {
 	private Integer id;
 	
 	@Column(name="Image")
-	private Byte Image[];
-	
+	private byte[] Image;
+
+	// Raw string stored in database and returned with .toString()
 	@Column(name="Details")
+	private String DetailsJson; 
+
+	// Main list of details to be interacted with and used
 	private ArrayList<HashMap<String, Object>> Details;
 	
+	// Raw input from AWS API
 	private List<FaceDetail> DetailsList; 
 	
+	// Getters and Setters
 	public Integer getId() {
 		return this.id;
 	}
@@ -41,24 +47,65 @@ public class FaceAnalysis {
 		this.id = id;
 	}
 	
-	public Byte[] getImage() {
+	public byte[] getImage() {
 		return this.Image;
 	}
 	
-	public void setS3Key(Byte Image[]) {
-		this.Image = Image;
+	public void setImage(byte[] bs) {
+		this.Image = bs;
 	}
 	
-	public List<FaceDetail> getDetails(){
-		return this.DetailsList;
+	/**
+	 * Returns a JSON string of the FaceAnalysis or null if an exception is thrown
+	 * @return JSON String
+	 * */
+	@Override
+	public String toString() {
+		return this.DetailsJson;
+	}
+
+	/**
+	 * Returns a list of the FaceAnalysis
+	 * @return ArrayList<HashMap<String, Object> List of FaceAnalysis
+	 */
+	public ArrayList<HashMap<String, Object>> getList(){
+		if (this.Details == null){
+			this.Details = JsonToList();
+		}
+		return this.Details;
 	}
 	
+	/**
+	 * Set details from AWS Rekognition output
+	 * @param List<FaceDetail> FaceDetailList
+	 */
 	public void setDetails(List<FaceDetail> FaceDetailList) {
 		this.DetailsList = FaceDetailList;
-		this.Details = this.detailsToList();
+		this.Details = this.AWSDetailsToList();
+		this.DetailsJson = this.detailsToJson();
+	}
+
+	private String detailsToJson() {
+		String stringifiedResult = "";
+		try{
+			stringifiedResult =  new ObjectMapper().writeValueAsString(this.Details);
+		} catch(Exception e) {
+			stringifiedResult = null;
+		}
+		return stringifiedResult;
+	}
+
+	private ArrayList<HashMap<String, Object>> JsonToList(){
+		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+		try{
+			list = new ObjectMapper().readValue(this.DetailsJson, ArrayList.class);
+		} catch(Exception e) {
+			list = null;
+		}
+		return list;
 	}
 	
-	private ArrayList<HashMap<String, Object>> detailsToList() {
+	private ArrayList<HashMap<String, Object>> AWSDetailsToList() {
 		// TODO: Handle case of DetailsList being null
 		ArrayList<HashMap<String, Object>> BuiltDetails = new ArrayList<HashMap<String, Object>>();
 		for(FaceDetail fd : this.DetailsList) {
@@ -129,18 +176,4 @@ public class FaceAnalysis {
 		return BuiltDetails;
 	}
 	
-	/**
-	 * Returns a JSON string of the FaceAnalysis or null if an exception is thrown
-	 * @return JSON String
-	 * */
-	@Override
-	public String toString() {
-		String stringifiedResult = "";
-		try{
-			stringifiedResult =  new ObjectMapper().writeValueAsString(detailsToList());
-		} catch(Exception e) {
-			stringifiedResult = null;
-		}
-		return stringifiedResult;
-	}
 }
