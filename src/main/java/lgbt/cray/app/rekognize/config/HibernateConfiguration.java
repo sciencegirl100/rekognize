@@ -1,9 +1,11 @@
 package lgbt.cray.app.rekognize.config;
  
+import java.sql.SQLException;
 import java.util.Properties;
  
 import javax.sql.DataSource;
- 
+
+import org.h2.tools.Server;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -49,6 +51,8 @@ public class HibernateConfiguration {
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
+        properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.ddl"));
+		properties.put("hibernate.hbm2ddl.import_files", "import.sql");
         return properties;        
     }
      
@@ -59,4 +63,11 @@ public class HibernateConfiguration {
        txManager.setSessionFactory(s);
        return txManager;
     }
+
+    @Bean
+	public Server startH2Server() throws SQLException {
+		Server server = Server.createTcpServer().start();
+		System.err.println(server.getURL());
+		return server;
+	}
 }

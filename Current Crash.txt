@@ -1,5 +1,174 @@
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'faceAnalysisDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory lgbt.cray.app.rekognize.dao.AbstractDao.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287)
+   ____    ___                   __    __  __         ___
+  / __/___/ (_)__  ___ ___   __ / /__ / /_/ /___ __  / _ \
+ / _// __/ / / _ \(_-</ -_) / // / -_) __/ __/ // /  \_, /
+/___/\__/_/_/ .__/___/\__/  \___/\__/\__/\__/\_, /  /___/
+           /_/                              /___/
+2022-02-08 17:40:06.752:INFO::main: Logging initialized @247ms
+   Configuration: C:\Users\liz\AppData\Local\Temp\eclipseJettyPlugin.config.rekognize__1_.xml
+         Version: 9.3.25.v20180904
+         Context: /
+            Port: 8080
+       Classpath: C:/Users/liz/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar
+                  C:/Users/liz/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+                  C:/Users/liz/.m2/repository/cglib/cglib-nodep/2.2.2/cglib-nodep-2.2.2.jar
+                  C:/Users/liz/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.1/jackson-annotations-2.13.1.jar
+                  C:/Users/liz/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.1/jackson-core-2.13.1.jar
+                  C:/Users/liz/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.1/jackson-databind-2.13.1.jar
+                  C:/Users/liz/.m2/repository/com/h2database/h2/2.1.210/h2-2.1.210.jar
+                  C:/Users/liz/.m2/repository/com/typesafe/netty/netty-reactive-streams-http/2.0.5/netty-reactive-streams-http-2.0.5.jar
+                  C:/Users/liz/.m2/repository/com/typesafe/netty/netty-reactive-streams/2.0.5/netty-reactive-streams-2.0.5.jar
+                  C:/Users/liz/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar
+                  C:/Users/liz/.m2/repository/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar
+                  C:/Users/liz/.m2/repository/commons-io/commons-io/2.2/commons-io-2.2.jar
+                  C:/Users/liz/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+                  C:/Users/liz/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-buffer/4.1.68.Final/netty-buffer-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-codec-http/4.1.68.Final/netty-codec-http-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-codec-http2/4.1.68.Final/netty-codec-http2-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-codec/4.1.68.Final/netty-codec-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-common/4.1.68.Final/netty-common-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-handler/4.1.68.Final/netty-handler-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-resolver/4.1.68.Final/netty-resolver-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.68.Final/netty-transport-native-unix-common-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/io/netty/netty-transport/4.1.68.Final/netty-transport-4.1.68.Final.jar
+                  C:/Users/liz/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+                  C:/Users/liz/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+                  C:/Users/liz/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar
+                  C:/Users/liz/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar
+                  C:/Users/liz/.m2/repository/org/hibernate/hibernate-core/4.3.6.Final/hibernate-core-4.3.6.Final.jar
+                  C:/Users/liz/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar
+                  C:/Users/liz/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar
+                  C:/Users/liz/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar
+                  C:/Users/liz/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar
+                  C:/Users/liz/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar
+                  C:/Users/liz/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar
+                  C:/Users/liz/.m2/repository/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar
+                  C:/Users/liz/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-aop/3.1.0.RELEASE/spring-aop-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-asm/3.1.0.RELEASE/spring-asm-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-beans/3.1.0.RELEASE/spring-beans-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-context-support/3.1.0.RELEASE/spring-context-support-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-context/3.1.0.RELEASE/spring-context-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-core/3.1.0.RELEASE/spring-core-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-expression/3.1.0.RELEASE/spring-expression-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-jdbc/3.1.0.RELEASE/spring-jdbc-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-orm/3.1.0.RELEASE/spring-orm-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-tx/3.1.0.RELEASE/spring-tx-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-web/3.1.0.RELEASE/spring-web-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/org/springframework/spring-webmvc/3.1.0.RELEASE/spring-webmvc-3.1.0.RELEASE.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/annotations/2.17.46/annotations-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/apache-client/2.17.46/apache-client-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/arns/2.17.46/arns-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/auth/2.17.46/auth-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/aws-core/2.17.46/aws-core-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/aws-json-protocol/2.17.46/aws-json-protocol-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/aws-query-protocol/2.17.46/aws-query-protocol-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/aws-xml-protocol/2.17.46/aws-xml-protocol-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/http-client-spi/2.17.46/http-client-spi-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/json-utils/2.17.46/json-utils-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/metrics-spi/2.17.46/metrics-spi-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/netty-nio-client/2.17.46/netty-nio-client-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/profiles/2.17.46/profiles-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/protocol-core/2.17.46/protocol-core-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/regions/2.17.46/regions-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/rekognition/2.17.46/rekognition-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/s3/2.17.46/s3-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/s3control/2.17.46/s3control-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/sdk-core/2.17.46/sdk-core-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/third-party-jackson-core/2.17.46/third-party-jackson-core-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/awssdk/utils/2.17.46/utils-2.17.46.jar
+                  C:/Users/liz/.m2/repository/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar
+                  C:/Users/liz/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar
+                  C:/Users/liz/eclipse-workspace/rekognize/target/classes
+2022-02-08 17:40:07.147:INFO:oejs.Server:main: jetty-9.3.25.v20180904, build timestamp: 2018-09-04T17:11:46-04:00, git hash: 3ce520221d0240229c862b122d2b06c12a625732
+2022-02-08 17:40:09.878:INFO:oeja.AnnotationConfiguration:main: Scanning elapsed time=820ms
+2022-02-08 17:40:09.938:INFO:/:main: No Spring WebApplicationInitializer types detected on classpath
+2022-02-08 17:40:10.081:WARN:oejs.SecurityHandler:main: ServletContext@o.e.j.w.WebAppContext@797badd3{/,file:///C:/Users/liz/eclipse-workspace/rekognize/src/main/webapp/,STARTING}{C:\Users\liz\eclipse-workspace\rekognize\src\main\webapp} has uncovered http methods for path: /
+2022-02-08 17:40:10.112:INFO:/:main: Initializing Spring root WebApplicationContext
+Feb 08, 2022 5:40:10 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization started
+Feb 08, 2022 5:40:10 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing Root WebApplicationContext: startup date [Tue Feb 08 17:40:10 EST 2022]; root of context hierarchy
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>
+INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+Feb 08, 2022 5:40:10 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@47af7f3d: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+Feb 08, 2022 5:40:10 PM org.springframework.web.context.ContextLoader initWebApplicationContext
+INFO: Root WebApplicationContext: initialization completed in 264 ms
+2022-02-08 17:40:10.530:INFO:/:main: Initializing Spring FrameworkServlet 'SpringDispatcher'
+Feb 08, 2022 5:40:10 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+INFO: FrameworkServlet 'SpringDispatcher': initialization started
+Feb 08, 2022 5:40:10 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+INFO: Refreshing WebApplicationContext for namespace 'SpringDispatcher-servlet': startup date [Tue Feb 08 17:40:10 EST 2022]; parent: Root WebApplicationContext
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.web.context.support.AnnotationConfigWebApplicationContext loadBeanDefinitions
+INFO: Found 7 annotated classes in package [lgbt.cray.app.rekognize]
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider registerDefaultFilters
+INFO: JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+Feb 08, 2022 5:40:10 PM org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>
+INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+Feb 08, 2022 5:40:10 PM org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+INFO: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2beee7ff: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,hibernateConfiguration,mvcConfiguration,apiController,configureController,homeController,runController,faceAnalysisDao,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionAttributeSource,transactionInterceptor,sessionFactory,dataSource,transactionManager,org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration#0,requestMappingHandlerMapping,viewControllerHandlerMapping,beanNameHandlerMapping,resourceHandlerMapping,defaultServletHandlerMapping,requestMappingHandlerAdapter,mvcConversionService,mvcValidator,httpRequestHandlerAdapter,simpleControllerHandlerAdapter,handlerExceptionResolver,getViewResolver,multipartResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@47af7f3d
+Feb 08, 2022 5:40:10 PM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFO: Loaded JDBC driver: org.h2.Driver
+Feb 08, 2022 5:40:11 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+Feb 08, 2022 5:40:11 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.6.Final}
+Feb 08, 2022 5:40:11 PM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+Feb 08, 2022 5:40:11 PM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+Feb 08, 2022 5:40:11 PM org.hibernate.engine.jdbc.internal.JdbcServicesImpl configure
+WARN: HHH000342: Could not obtain connection to query metadata : A file path that is implicitly relative to the current working directory is not allowed in the database URL "jdbc:h2:!/rekognize/appdb". Use an absolute path, ~/name, ./name, or the baseDir setting instead. [90011-210]
+Feb 08, 2022 5:40:11 PM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Feb 08, 2022 5:40:11 PM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
+INFO: HHH000422: Disabling contextual LOB creation as connection was null
+Feb 08, 2022 5:40:11 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+Feb 08, 2022 5:40:11 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+Feb 08, 2022 5:40:11 PM org.hibernate.internal.SessionFactoryImpl buildCurrentSessionContext
+ERROR: HHH000302: Unable to construct current session context [org.springframework.orm.hibernate4.SpringSessionContext]
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.hibernate.internal.SessionFactoryImpl.buildCurrentSessionContext(SessionFactoryImpl.java:1513)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:532)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1928)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:184)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:314)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
@@ -36,125 +205,23 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
 	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory lgbt.cray.app.rekognize.dao.AbstractDao.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	... 36 more
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
-	... 38 more
-Caused by: org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:128)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:155)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:136)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:78)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:68)
-	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
-	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1928)
-	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:184)
-	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:314)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
-	... 48 more
+Caused by: java.lang.NoClassDefFoundError: org/hibernate/service/jta/platform/spi/JtaPlatform
+	at org.springframework.orm.hibernate4.SpringSessionContext.<init>(SpringSessionContext.java:56)
+	... 60 more
+Caused by: java.lang.ClassNotFoundException: org.hibernate.service.jta.platform.spi.JtaPlatform
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:487)
+	at org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:428)
+	... 61 more
 
-2022-01-31 12:57:31.872:WARN:/:main: unavailable
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'faceAnalysisDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory lgbt.cray.app.rekognize.dao.AbstractDao.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
-	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:631)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:588)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:645)
-	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:508)
-	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:449)
-	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:133)
-	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
-	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:643)
-	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:422)
-	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:900)
-	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
-	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1406)
-	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1368)
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:778)
-	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
-	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:522)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
-	at org.eclipse.jetty.server.Server.start(Server.java:427)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
-	at org.eclipse.jetty.server.Server.doStart(Server.java:394)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
-	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-Caused by: 
-org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory lgbt.cray.app.rekognize.dao.AbstractDao.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
-	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:631)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:588)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:645)
-	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:508)
-	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:449)
-	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:133)
-	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
-	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:643)
-	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:422)
-	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:900)
-	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
-	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1406)
-	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1368)
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:778)
-	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
-	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:522)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
-	at org.eclipse.jetty.server.Server.start(Server.java:427)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
-	at org.eclipse.jetty.server.Server.doStart(Server.java:394)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
-	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-Caused by: 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
+Feb 08, 2022 5:40:11 PM org.springframework.beans.factory.support.DefaultSingletonBeanRegistry destroySingletons
+INFO: Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2beee7ff: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,hibernateConfiguration,mvcConfiguration,apiController,configureController,homeController,runController,faceAnalysisDao,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionAttributeSource,transactionInterceptor,sessionFactory,dataSource,transactionManager,org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration#0,requestMappingHandlerMapping,viewControllerHandlerMapping,beanNameHandlerMapping,resourceHandlerMapping,defaultServletHandlerMapping,requestMappingHandlerAdapter,mvcConversionService,mvcValidator,httpRequestHandlerAdapter,simpleControllerHandlerAdapter,handlerExceptionResolver,getViewResolver,multipartResolver]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@47af7f3d
+Feb 08, 2022 5:40:11 PM org.springframework.web.servlet.FrameworkServlet initServletBean
+SEVERE: Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryImplementor.getConnectionProvider()Lorg/hibernate/service/jdbc/connections/spi/ConnectionProvider;
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
@@ -162,14 +229,46 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:631)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:588)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:645)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:508)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:449)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:133)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:643)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:422)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:900)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1406)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1368)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:778)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:522)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
+	at org.eclipse.jetty.server.Server.start(Server.java:427)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:394)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
+	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
+	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
+Caused by: java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryImplementor.getConnectionProvider()Lorg/hibernate/service/jdbc/connections/spi/ConnectionProvider;
+	at org.springframework.orm.hibernate4.SessionFactoryUtils.getDataSource(SessionFactoryUtils.java:98)
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(HibernateTransactionManager.java:264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 35 more
+
+2022-02-08 17:40:11.397:WARN:/:main: unavailable
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryImplementor.getConnectionProvider()Lorg/hibernate/service/jdbc/connections/spi/ConnectionProvider;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
 	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
@@ -205,21 +304,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
 Caused by: 
-org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:128)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:155)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:136)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:78)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:68)
-	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
-	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1928)
-	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:184)
-	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:314)
+java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryImplementor.getConnectionProvider()Lorg/hibernate/service/jdbc/connections/spi/ConnectionProvider;
+	at org.springframework.orm.hibernate4.SessionFactoryUtils.getDataSource(SessionFactoryUtils.java:98)
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(HibernateTransactionManager.java:264)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
@@ -228,19 +315,6 @@ org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to r
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
@@ -270,7 +344,7 @@ org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to r
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
 	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-2022-01-31 12:57:31.877:WARN:oejw.WebAppContext:main: Failed startup of context o.e.j.w.WebAppContext@551bdc27{/,file:///C:/Users/liz/eclipse-workspace/rekognize/src/main/webapp/,UNAVAILABLE}{C:\Users\liz\eclipse-workspace\rekognize\src\main\webapp}
+2022-02-08 17:40:11.399:WARN:oejw.WebAppContext:main: Failed startup of context o.e.j.w.WebAppContext@797badd3{/,file:///C:/Users/liz/eclipse-workspace/rekognize/src/main/webapp/,UNAVAILABLE}{C:\Users\liz\eclipse-workspace\rekognize\src\main\webapp}
 javax.servlet.ServletException: SpringDispatcher@3fafd0b4==org.springframework.web.servlet.DispatcherServlet,jsp=null,order=1,inst=false
 	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:664)
 	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:422)
@@ -292,87 +366,7 @@ javax.servlet.ServletException: SpringDispatcher@3fafd0b4==org.springframework.w
 	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
 Caused by: 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'faceAnalysisDao': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory lgbt.cray.app.rekognize.dao.AbstractDao.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
-	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:631)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:588)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:645)
-	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:508)
-	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:449)
-	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:133)
-	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
-	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:643)
-	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:422)
-	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:900)
-	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
-	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1406)
-	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1368)
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:778)
-	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
-	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:522)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
-	at org.eclipse.jetty.server.Server.start(Server.java:427)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
-	at org.eclipse.jetty.server.Server.doStart(Server.java:394)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
-	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-Caused by: 
-org.springframework.beans.factory.BeanCreationException: Could not autowire field: private org.hibernate.SessionFactory lgbt.cray.app.rekognize.dao.AbstractDao.sessionFactory; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
-	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:631)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:588)
-	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:645)
-	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:508)
-	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:449)
-	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:133)
-	at javax.servlet.GenericServlet.init(GenericServlet.java:244)
-	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:643)
-	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:422)
-	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:900)
-	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:349)
-	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1406)
-	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1368)
-	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:778)
-	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:262)
-	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:522)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:131)
-	at org.eclipse.jetty.server.Server.start(Server.java:427)
-	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:105)
-	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:61)
-	at org.eclipse.jetty.server.Server.doStart(Server.java:394)
-	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
-	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
-	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-Caused by: 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager' defined in class path resource [lgbt/cray/app/rekognize/config/HibernateConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryImplementor.getConnectionProvider()Lorg/hibernate/service/jdbc/connections/spi/ConnectionProvider;
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
@@ -380,19 +374,6 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
@@ -423,21 +404,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
 Caused by: 
-org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.SQLiteDialect] as strategy [org.hibernate.dialect.Dialect]
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:128)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveDefaultableStrategy(StrategySelectorImpl.java:155)
-	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:136)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:78)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:68)
-	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:205)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
-	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1885)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1843)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1928)
-	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:184)
-	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:314)
+java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryImplementor.getConnectionProvider()Lorg/hibernate/service/jdbc/connections/spi/ConnectionProvider;
+	at org.springframework.orm.hibernate4.SessionFactoryUtils.getDataSource(SessionFactoryUtils.java:98)
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.afterPropertiesSet(HibernateTransactionManager.java:264)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
@@ -446,19 +415,6 @@ org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to r
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
@@ -488,5 +444,10 @@ org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to r
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9Adapter.start(Jetty9Adapter.java:68)
 	at net.sourceforge.eclipsejetty.starter.common.AbstractJettyLauncherMain.launch(AbstractJettyLauncherMain.java:84)
 	at net.sourceforge.eclipsejetty.starter.jetty9.Jetty9LauncherMain.main(Jetty9LauncherMain.java:42)
-2022-01-31 12:57:31.905:INFO:oejs.AbstractConnector:main: Started ServerConnector@8e70ef4{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
-2022-01-31 12:57:31.906:INFO:oejs.Server:main: Started @4258ms
+2022-02-08 17:40:11.423:INFO:oejs.AbstractConnector:main: Started ServerConnector@5ed731d0{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+2022-02-08 17:40:11.424:INFO:oejs.Server:main: Started @4922ms
+------------------------------------------------
+Jetty startup finished in 4.8 s.
+Used memory: 25.1 MB of 1.0 GB (10.7 GB maximum)
+Console available: type "help".
+------------------------------------------------
