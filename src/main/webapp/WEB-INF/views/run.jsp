@@ -26,7 +26,7 @@
                 <div class="col-4">
                     <div class="row overflow-auto">
                         <!-- Past Analysis  -->
-                        <!-- <savedanalysis></savedanalysis> -->
+                        <savedanalysis></savedanalysis>
                     </div>
                 </div>
                 <div class="col-8">

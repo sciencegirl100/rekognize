@@ -32,6 +32,9 @@ public class FaceAnalysis {
 	@Column(name="Details")
 	private String DetailsJson; 
 
+	@Column(name="Name")
+	private String name;
+
 	// Main list of details to be interacted with and used
 	private ArrayList<HashMap<String, Object>> Details;
 	
@@ -45,6 +48,14 @@ public class FaceAnalysis {
 	
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public void setName(String name){
+		this.name = name;
+	}
+
+	public String getName(){
+		return this.name;
 	}
 	
 	public byte[] getImage() {
