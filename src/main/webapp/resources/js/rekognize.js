@@ -19,6 +19,11 @@ rekognize.component('savedanalysis', {
 	templateUrl: '/resources/templates/SavedAnalysis.html',
 	controller: function savedAnalysisController() {
 		console.log("Load SavedAnalysis");
+		$scope.getList = function(){
+			$http.get("/api/list").then(function(response) {
+				$scope.list = response;
+	  		});
+		}
 	}
 });
 

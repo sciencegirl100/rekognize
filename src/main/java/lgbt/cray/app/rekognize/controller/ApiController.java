@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,8 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lgbt.cray.app.rekognize.config.FaceAnalysis;
+import lgbt.cray.app.rekognize.config.MvcConfiguration;
 import lgbt.cray.app.rekognize.configuration.Settings;
 import lgbt.cray.app.rekognize.data.Rekognition;
+import lgbt.cray.app.rekognize.service.FaceAnalysisService;
 import software.amazon.awssdk.services.rekognition.model.FaceDetail;
 
 @Controller
@@ -31,12 +38,20 @@ public class ApiController {
 	)
 	@ResponseBody
 	public ResponseEntity<String> runFaceRekognition(@RequestParam("image") MultipartFile file, ModelMap model) {
+		// Hibernate Persistence
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(MvcConfiguration.class);
+		FaceAnalysisService service = (FaceAnalysisService) context.getBean("faceAnalysisService");
+		FaceAnalysis fa = new FaceAnalysis();
+		
 		List<FaceDetail> faceResponse = null;
 		String result = "";
 		String errors = "";
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
 			faceResponse = Rekognition.face(Rekognition.mpfToF(file), Settings.getSetting("awsRegion"));
+			fa.setDetails(faceResponse);
+			fa.setImage(file.getBytes());
+			service.saveFaceAnalysis(fa);
 		} catch (Exception e) {
 			e.printStackTrace();
 			errors += e.toString() + "\n";
@@ -49,22 +64,8 @@ public class ApiController {
 				result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(resultMap);
 			}else {
 				resultMap.put("success", true);
-				ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
-				for(FaceDetail fd : faceResponse) {
-					HashMap<String, Object> face = new HashMap<String, Object>();
-					face.put("ageRangeHigh", fd.ageRange().high());
-					face.put("ageRangeLow", fd.ageRange().low());
-					face.put("hasBeard", fd.beard().confidence());
-					Map<String, Float> bounds = new HashMap<String, Float>();
-					bounds.put("height", fd.boundingBox().height());
-					bounds.put("width", fd.boundingBox().width());
-					bounds.put("top",  fd.boundingBox().top());
-					bounds.put("left", fd.boundingBox().left());
-					// TODO: add remaining features
-					face.put("boundingBox", bounds);
-					data.add(face);
-				}
-				resultMap.put("data", data);
+				resultMap.put("name", fa.getName());
+				resultMap.put("data", fa.toString());
 				resultMap.put("timestamp", new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
 				result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(resultMap);
 			}
@@ -73,41 +74,58 @@ public class ApiController {
 		}
 		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(
-	  value = "/api/test",
+	  value = "/api/list",
 	  method = RequestMethod.POST,
 	  produces = "application/json"
 	)
 	@ResponseBody
-	public ResponseEntity<String> test(@RequestParam("image") MultipartFile file, ModelMap model) {
-		File upl = null;
+	public ResponseEntity<String> list(ModelMap model) {
+		// Hibernate Persistence
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(MvcConfiguration.class);
+		FaceAnalysisService service = (FaceAnalysisService) context.getBean("faceAnalysisService");
+		List<FaceAnalysis> list = service.getAllFaceAnalysis();
 		String result = "";
-		String errors = "";
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			// faceResponse = Rekognition.face(file.getBytes(), file.getOriginalFilename(), Settings.getSetting("awsRegion"));
-			upl = Rekognition.mpfToF(file);
-			Rekognition.uploadToS3("", upl.getAbsolutePath(), "test.jpg");
-		} catch (Exception e) {
-			e.printStackTrace();
-			errors += e.toString() + "\n";
-		}
-		try {
-			if (upl == null) {
-				resultMap.put("success", false);
-				resultMap.put("error", (errors.length() == 0)?"Result is null.":errors);
-				resultMap.put("timestamp", new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
-				result = new ObjectMapper().writeValueAsString(resultMap);
-			}else {
-				resultMap.put("success", true);
-				resultMap.put("data", upl.getAbsolutePath());
-				resultMap.put("timestamp", new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
-				result = new ObjectMapper().writeValueAsString(resultMap);
-			}
+			resultMap.put("success", true);
+			resultMap.put("data", list);
+			result = new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(resultMap);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<String>(result, HttpStatus.OK);
+	}
+	
+	@RequestMapping(
+	  value = "/api/delete",
+	  method = RequestMethod.POST,
+	  produces = "application/json"
+	)
+	@ResponseBody
+	public ResponseEntity<String> delete(@RequestParam("id") String idStr){
+		Integer id = Integer.parseInt(idStr);
+
+		// Hibernate Persistence
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(MvcConfiguration.class);
+		FaceAnalysisService service = (FaceAnalysisService) context.getBean("faceAnalysisService");
+		service.deleteFaceAnalysisById(id);
+		return null;
+	}
+
+	@RequestMapping(
+	  value = "/api/rename",
+	  method = RequestMethod.POST,
+	  produces = "application/json"
+	)
+	@ResponseBody
+	public ResponseEntity<String> rename(@RequestParam("id") String idStr, @RequestParam("name") String name){
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(MvcConfiguration.class);
+		FaceAnalysisService service = (FaceAnalysisService) context.getBean("faceAnalysisService");
+		FaceAnalysis fa = service.findById(Integer.parseInt(idStr));
+		fa.setName(name);
+		service.updateFaceAnalysis(fa);
+		return null;
 	}
 }
